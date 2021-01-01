@@ -176,6 +176,7 @@
      <Compile Include="Assets\Photon\Simple\Components\SyncOculus\SimpleOculusAutomation.cs" />
      <Compile Include="Assets\Photon\Simple\Utilities\Networking\NetAdapters\NetMsgSends.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
+     <Compile Include="Assets\Scripts\Launcher.cs" />
      <Compile Include="Assets\Photon\Simple\Utilities\GUITools\EnumMaskAttribute.cs" />
      <Compile Include="Assets\Photon\PhotonUtilities\Compression\LiteCrusher\LiteFloatCrusher.cs" />
      <Compile Include="Assets\Photon\PhotonUtilities\Compression\Enums\SerializationFlags.cs" />
@@ -275,7 +276,7 @@
      <Compile Include="Assets\Photon\Simple\Core\GenericHitscan\HitscanComponent.cs" />
      <Compile Include="Assets\Photon\Simple\Components\SyncState\Enums\ObjState.cs" />
      <Compile Include="Assets\Photon\Simple\Utilities\GhostWorld\HauntedStatic.cs" />
-     <Compile Include="Assets\Scripts\Launcher.cs" />
+     <Compile Include="Assets\Scripts\PlayerNameInputField.cs" />
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
      <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
      <None Include="Assets\Photon\PhotonUtilities\PackObject\_GeneratedPackExtensions\PackObject Extensions.txt" />
@@ -478,22 +479,22 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.10f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
-    </Reference>
-    <Reference Include="QuatCompress">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/QuatCompress.dll</HintPath>
-    </Reference>
-    <Reference Include="ByteConverter">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Assets/Photon/PhotonUtilities/Compression/plugins/ByteConverter.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
     </Reference>
-    <Reference Include="HalFloat">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/HalFloat.dll</HintPath>
+    <Reference Include="ByteConverter">
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Assets/Photon/PhotonUtilities/Compression/plugins/ByteConverter.dll</HintPath>
     </Reference>
     <Reference Include="FloatCrusher">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/FloatCrusher.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/FloatCrusher.dll</HintPath>
+    </Reference>
+    <Reference Include="HalFloat">
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/HalFloat.dll</HintPath>
+    </Reference>
+    <Reference Include="QuatCompress">
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/QuatCompress.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.10f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -847,31 +848,31 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.10f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>D:/project/TutorialPhoton2/TutorialPhoton2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>D:/project/TutorialPUN2/TutorialPhoton2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
