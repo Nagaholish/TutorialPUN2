@@ -277,6 +277,7 @@
      <Compile Include="Assets\Photon\Simple\Components\SyncState\Enums\ObjState.cs" />
      <Compile Include="Assets\Photon\Simple\Utilities\GhostWorld\HauntedStatic.cs" />
      <Compile Include="Assets\Scripts\PlayerNameInputField.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
      <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
      <None Include="Assets\Photon\PhotonUtilities\PackObject\_GeneratedPackExtensions\PackObject Extensions.txt" />
