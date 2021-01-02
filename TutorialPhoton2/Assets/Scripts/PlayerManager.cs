@@ -10,6 +10,7 @@ using Photon.Pun.Demo.PunBasics;
 
 namespace Com.MyCompany.MyGame
 {
+
     /// <summary>
     /// Player manager.
     /// Handles fire Input and Beams.
@@ -23,11 +24,15 @@ namespace Com.MyCompany.MyGame
         private GameObject beams;
         //True, when the user is firing
         bool IsFiring;
+        bool ignited;
 
         [Tooltip("The Player's UI GameObject Prefab")]
         [SerializeField]
         private GameObject playerUiPrefab;
 
+        [Tooltip("The Player's Ball GameObject Prefab")]
+        [SerializeField]
+        private GameObject ballPrefab;
         #endregion
 
 
@@ -95,8 +100,8 @@ namespace Com.MyCompany.MyGame
 
             if (playerUiPrefab != null)
             {
-                GameObject _uiGo =  Instantiate(playerUiPrefab);
-                _uiGo.SendMessage ("SetTarget", this, SendMessageOptions.RequireReceiver);
+                GameObject _uiGo = Instantiate(playerUiPrefab);
+                _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
             }
             else
             {
@@ -140,7 +145,12 @@ namespace Com.MyCompany.MyGame
                 beams.SetActive(IsFiring);
             }
 
-            
+            if (ignited)
+            {
+                var go = PhotonNetwork.Instantiate("ball", this.transform.position, Quaternion.identity);
+                go.transform.position = this.transform.position + this.transform.forward * 2;
+                go.GetComponent<Rigidbody>().AddForce((transform.transform.forward + this.transform.up).normalized * 2.0f, ForceMode.Impulse);
+            }
         }
 
         #endregion
@@ -165,6 +175,12 @@ namespace Com.MyCompany.MyGame
                 {
                     IsFiring = false;
                 }
+            }
+
+            ignited = false;
+            if (Input.GetButtonUp("Fire1"))
+            {
+                ignited = true;
             }
         }
 
@@ -198,7 +214,7 @@ namespace Com.MyCompany.MyGame
         void OnTriggerStay(Collider other)
         {
             // we dont' do anything if we are not the local player.
-            if (! photonView.IsMine)
+            if (!photonView.IsMine)
             {
                 return;
             }
@@ -209,7 +225,7 @@ namespace Com.MyCompany.MyGame
                 return;
             }
             // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
-            Health -= 0.1f*Time.deltaTime;
+            Health -= 0.1f * Time.deltaTime;
         }
 
 
@@ -222,12 +238,14 @@ namespace Com.MyCompany.MyGame
             {
                 // このプレイヤーを所有しています。データをほかのものに送ります。
                 stream.SendNext(IsFiring);
+                stream.SendNext(ignited);
                 stream.SendNext(Health);
             }
             else
             {
                 // ネットワークプレイヤー。データ受信
                 this.IsFiring = (bool)stream.ReceiveNext();
+                this.ignited = (bool)stream.ReceiveNext();
                 this.Health = (float)stream.ReceiveNext();
             }
         }
@@ -235,13 +253,13 @@ namespace Com.MyCompany.MyGame
 
         #endregion
 
-        #if !UNITY_5_4_OR_NEWER
+#if !UNITY_5_4_OR_NEWER
         /// <summary>See CalledOnLevelWasLoaded. Outdated in Unity 5.4.</summary>
         void OnLevelWasLoaded(int level)
         {
             this.CalledOnLevelWasLoaded(level);
         }
-        #endif
+#endif
 
 
         void CalledOnLevelWasLoaded(int level)

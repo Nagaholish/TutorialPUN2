@@ -1375,6 +1375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beams: {fileID: 364736131752427282}
   playerUiPrefab: {fileID: 2712964542325169218, guid: f29b3660862a58149b27763e2e832fa0, type: 3}
+  ballPrefab: {fileID: 6085840729249226620, guid: c3af0b50ab3d11f47ab9c5776b4d03b4, type: 3}
   Health: 1
 --- !u!114 &1374453550596501439
 MonoBehaviour:

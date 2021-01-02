@@ -11,7 +11,7 @@ namespace Com.MyCompany.MyGame
 
 
         private Animator animator;
-        
+
         [SerializeField]
         private float directionDampTime = 0.25f;
         // Use this for initializationいつもコードを書くべきです。手間ですが、長い目で見るとそのほうがずっといいです。
@@ -47,11 +47,12 @@ namespace Com.MyCompany.MyGame
                 if (Input.GetButtonDown("Fire2"))
                 {
                     animator.SetTrigger("Jump");
-                }            
+                }
             }
 
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
+            //h = v = 0.5f;
             if (v < 0)
             {
                 v = 0;
@@ -60,7 +61,7 @@ namespace Com.MyCompany.MyGame
 
             animator.SetFloat("Direction", h, directionDampTime, Time.deltaTime);
 
-            
+
         }
 
 
