@@ -84,13 +84,14 @@ namespace Com.MyCompany.MyGame
                 Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
             }
 
-            #if UNITY_5_4_OR_NEWER
+#if UNITY_5_4_OR_NEWER
             // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
-            UnityEngine.SceneManagement.SceneManager.sceneLoaded += (scene, loadingMode) =>
-                    {
-                        this.CalledOnLevelWasLoaded(scene.buildIndex);
-                    };
-            #endif
+            //UnityEngine.SceneManagement.SceneManager.sceneLoaded += (scene, loadingMode) =>
+            //{
+            //          this.CalledOnLevelWasLoaded(scene.buildIndex);
+            //};
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded += WrappedCalledOnLevelWasLoaded;
+#endif
 
             if (playerUiPrefab != null)
             {
@@ -101,6 +102,20 @@ namespace Com.MyCompany.MyGame
             {
                 Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
             }
+        }
+
+#if UNITY_5_4_OR_NEWER
+        void WrappedCalledOnLevelWasLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+        {
+            CalledOnLevelWasLoaded(scene.buildIndex);
+        }
+#endif
+        void OnDestroy()
+        {
+#if UNITY_5_4_OR_NEWER
+            // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded -= WrappedCalledOnLevelWasLoaded;
+#endif
         }
 
         /// <summary>
