@@ -23,6 +23,11 @@ namespace Com.MyCompany.MyGame
         private GameObject beams;
         //True, when the user is firing
         bool IsFiring;
+
+        [Tooltip("The Player's UI GameObject Prefab")]
+        [SerializeField]
+        private GameObject playerUiPrefab;
+
         #endregion
 
 
@@ -86,6 +91,16 @@ namespace Com.MyCompany.MyGame
                         this.CalledOnLevelWasLoaded(scene.buildIndex);
                     };
             #endif
+
+            if (playerUiPrefab != null)
+            {
+                GameObject _uiGo =  Instantiate(playerUiPrefab);
+                _uiGo.SendMessage ("SetTarget", this, SendMessageOptions.RequireReceiver);
+            }
+            else
+            {
+                Debug.LogWarning("<Color=Red><a>Missing</a></Color> PlayerUiPrefab reference on player Prefab.", this);
+            }
         }
 
         /// <summary>
@@ -221,6 +236,9 @@ namespace Com.MyCompany.MyGame
             {
                 transform.position = new Vector3(0f, 5f, 0f);
             }
+
+            GameObject _uiGo = Instantiate(this.playerUiPrefab);
+            _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
         }
     }
 }
