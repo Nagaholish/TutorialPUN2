@@ -14,7 +14,12 @@ namespace Com.MyCompany.MyGame
 {
     public class GameManager : MonoBehaviourPunCallbacks
     {
+        private void Start() 
+        {
+            Instance = this;    
+        }
 
+        public static GameManager Instance;
 
         #region Photon Callbacks
 
