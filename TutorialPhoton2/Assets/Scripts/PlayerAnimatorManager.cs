@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
+using Photon.Pun;
+using Photon.Realtime;
+
 namespace Com.MyCompany.MyGame
 {
-    public class PlayerAnimatorManager : MonoBehaviour
+    public class PlayerAnimatorManager : MonoBehaviourPunCallbacks
     {
         #region MonoBehaviour Callbacks
 
@@ -26,6 +29,10 @@ namespace Com.MyCompany.MyGame
         // Update is called once per frame
         void Update()
         {
+            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+            {
+                return;
+            }
             if (!animator)
             {
                 return;

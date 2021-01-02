@@ -1244,6 +1244,8 @@ GameObject:
   - component: {fileID: 2231575302249780692}
   - component: {fileID: 4951965497930238202}
   - component: {fileID: 2762731618315251406}
+  - component: {fileID: 1374453550596501439}
+  - component: {fileID: 2752069715080321899}
   m_Layer: 0
   m_Name: My Robot Kyle
   m_TagString: Untagged
@@ -1332,7 +1334,7 @@ MonoBehaviour:
   distance: 7
   height: 3
   centerOffset: {x: 0, y: 4, z: 0}
-  followOnStart: 1
+  followOnStart: 0
   smoothSpeed: 0.125
 --- !u!114 &4951965497930238202
 MonoBehaviour:
@@ -1352,8 +1354,11 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
-  viewIdField: 1
+  ObservedComponents:
+  - {fileID: 2762731618315251406}
+  - {fileID: 1374453550596501439}
+  - {fileID: 2752069715080321899}
+  viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &2762731618315251406
@@ -1369,6 +1374,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beams: {fileID: 364736131752427282}
+  Health: 1
+--- !u!114 &1374453550596501439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120686419523042376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &2752069715080321899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120686419523042376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 1
+    Name: Speed
+  - Type: 1
+    SynchronizeType: 1
+    Name: Direction
+  - Type: 4
+    SynchronizeType: 0
+    Name: Hi
+  - Type: 9
+    SynchronizeType: 1
+    Name: Jump
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &8120686419523042378
 GameObject:
   m_ObjectHideFlags: 0

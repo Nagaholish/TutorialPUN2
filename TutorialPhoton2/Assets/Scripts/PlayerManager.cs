@@ -6,13 +6,15 @@ using System.Collections;
 using Photon.Pun;
 using Photon.Realtime;
 
+using Photon.Pun.Demo.PunBasics;
+
 namespace Com.MyCompany.MyGame
 {
     /// <summary>
     /// Player manager.
     /// Handles fire Input and Beams.
     /// </summary>
-    public class PlayerManager : MonoBehaviourPunCallbacks
+    public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         #region Private Fields
 
@@ -41,6 +43,27 @@ namespace Com.MyCompany.MyGame
             else
             {
                 beams.SetActive(false);
+            }
+        }
+
+        /// <summary>
+        /// 初期化の際にUnityによりGameObjectに呼び出されるMonoBehaviourメソッド
+        /// </summary>
+        void Start()
+        {
+            CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
+
+
+            if (_cameraWork != null)
+            {
+                if (photonView.IsMine)
+                {
+                    _cameraWork.OnStartFollowing();
+                }
+            }
+            else
+            {
+                Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
             }
         }
 
@@ -137,5 +160,28 @@ namespace Com.MyCompany.MyGame
             // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
             Health -= 0.1f*Time.deltaTime;
         }
+
+
+        #region IPunObservable implementation
+
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                // このプレイヤーを所有しています。データをほかのものに送ります。
+                stream.SendNext(IsFiring);
+                stream.SendNext(Health);
+            }
+            else
+            {
+                // ネットワークプレイヤー。データ受信
+                this.IsFiring = (bool)stream.ReceiveNext();
+                this.Health = (float)stream.ReceiveNext();
+            }
+        }
+
+
+        #endregion
     }
 }

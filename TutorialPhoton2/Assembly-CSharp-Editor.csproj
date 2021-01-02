@@ -614,44 +614,26 @@
     <Reference Include="System.Xml.XPath.XDocument">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.10f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.TestRunner">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{b28e8221-3ee9-457d-d99b-896adb183856}</Project>
       <Name>Assembly-CSharp</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.TestRunner.csproj">
+      <Project>{8a6c9aa1-f570-f8b0-50b2-60b6e9dff155}</Project>
+      <Name>UnityEditor.TestRunner</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{c05374f6-595a-1388-d581-763349fabbf5}</Project>
+      <Name>UnityEngine.TestRunner</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{ea5d2235-2147-cfaf-5652-2c1ccdb8f635}</Project>
+      <Name>Unity.Timeline.Editor</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
@@ -669,6 +651,11 @@
       <Name>PunDemos.DemoSlotcarEditor</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{6fe33ebd-4bf6-aea0-f48c-81f87bb364d1}</Project>
+      <Name>Unity.VSCode.Editor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
       <Project>{7e1c8122-60dd-8d44-2f8c-722f9a3a167f}</Project>
       <Name>PhotonUnityNetworking.Demos</Name>
@@ -679,6 +666,21 @@
       <Name>PhotonUnityNetworking.Utilities</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{83e8efa1-d7b9-f573-e6b4-069c35e86394}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{959d01c0-ed35-4ae3-b95f-193f33ce55a2}</Project>
+      <Name>UnityEngine.UI</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{873016c0-1d3d-002f-dac5-a8bc21afd503}</Project>
+      <Name>Unity.Timeline</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="EmoCompressUtilsASMDEF.csproj">
       <Project>{2ac5cd1a-b6b3-2172-1ae5-a69d02efaaec}</Project>
       <Name>EmoCompressUtilsASMDEF</Name>
@@ -687,6 +689,11 @@
     <ProjectReference Include="PhotonRealtime.csproj">
       <Project>{d73ce943-9886-48c9-0b57-e291721ee3ce}</Project>
       <Name>PhotonRealtime</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{2c9aa4ed-3b48-c30a-2cf2-d469a4cafd50}</Project>
+      <Name>Unity.Rider.Editor</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.csproj">
@@ -704,9 +711,19 @@
       <Name>BitpackersASMDEF</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
+      <Project>{5f00e0fa-b59b-ef7e-440d-e20f994ae449}</Project>
+      <Name>Unity.VisualStudio.Editor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
       <Project>{76f0e008-acb2-4943-d778-715d5d57acf9}</Project>
       <Name>PhotonChat</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{54abd28c-ae13-45aa-ab85-0ecdf3f3becd}</Project>
+      <Name>Unity.TextMeshPro</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
@@ -717,6 +734,11 @@
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
       <Project>{e0111cb9-b8b3-f5c6-1c29-c70ffca2272d}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{f1529537-4fb2-135a-dd35-d4bf12c917f3}</Project>
+      <Name>UnityEditor.UI</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
