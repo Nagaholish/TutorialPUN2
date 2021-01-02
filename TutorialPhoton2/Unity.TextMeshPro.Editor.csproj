@@ -303,6 +303,9 @@
     <Reference Include="QuatCompress">
         <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Assets/Photon/PhotonUtilities/TransformCrusher/plugins/QuatCompress.dll</HintPath>
     </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+        <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
         <HintPath>D:/project/TutorialPhotonUnityNewtork2/TutorialPhoton2/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
@@ -662,27 +665,22 @@
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{54abd28c-ae13-45aa-ab85-0ecdf3f3becd}</Project>
       <Name>Unity.TextMeshPro</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{f1529537-4fb2-135a-dd35-d4bf12c917f3}</Project>
       <Name>UnityEditor.UI</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{959d01c0-ed35-4ae3-b95f-193f33ce55a2}</Project>
       <Name>UnityEngine.UI</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{8a6c9aa1-f570-f8b0-50b2-60b6e9dff155}</Project>
       <Name>UnityEditor.TestRunner</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
       <Project>{c05374f6-595a-1388-d581-763349fabbf5}</Project>
       <Name>UnityEngine.TestRunner</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
